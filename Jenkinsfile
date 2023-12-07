@@ -22,9 +22,18 @@ pipeline{
 			}
 		}
         stage('5-s5'){
-            steps{
-                sh 'bash -x /var/lib/jenkins/workspace/demo1/scriptdemo.sh'
-            }
+			parallel{
+				stage('p1'){
+					steps{
+						echo "first parallel job"
+					}
+				}
+				stage(''p2){
+					steps{
+						echo "we go do am las las"
+					}
+				}
+			}
         }
 	}
 }
