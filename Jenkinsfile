@@ -28,7 +28,7 @@ pipeline{
 						echo "first parallel job"
 					}
 				}
-				stage(''p2){
+				stage('p2'){
 					steps{
 						echo "we go do am las las"
 					}
