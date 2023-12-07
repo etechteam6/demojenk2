@@ -1,9 +1,9 @@
 pipeline{
 	agent any 
 	stages{
-		stage('1-s1'){
+		stage('1-clonecode'){
 			steps{
-				sh 'df -h'
+				checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-creds', url: 'https://github.com/etechteam6/demojenk2.git']])
 			}
 		}
 		stage('2-s2'){
