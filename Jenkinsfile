@@ -21,5 +21,10 @@ pipeline{
 				echo "this is my life you decide yours!"
 			}
 		}
+        stage('5-s5'){
+            steps{
+                sh 'bash -x /var/lib/jenkins/workspace/demo1/scriptdemo.sh'
+            }
+        }
 	}
 }
